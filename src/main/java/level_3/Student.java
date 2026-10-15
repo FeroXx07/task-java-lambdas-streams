@@ -1,12 +1,14 @@
 package level_3;
 
+import java.util.Locale;
+
 public class Student {
     private final String name;
     private final int age;
     private final int year;
-    private final int grade;
+    private final float grade;
 
-    public Student(String name, int age, int year, int grade) {
+    public Student(String name, int age, int year, float grade) {
         this.name = name;
         this.age = age;
         this.year = year;
@@ -14,7 +16,8 @@ public class Student {
     }
 
     public String getName() { return name;}
+    public String getNameNormalized(){return name.toUpperCase(Locale.ROOT);}
     public int getAge() { return age; }
     public int getYear() { return year; }
-    public int getGrade() { return grade; }
+    public float getGrade() { return grade; }
 }
