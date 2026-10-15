@@ -45,13 +45,13 @@ public class StringUtility {
         List<String> listB = listA
                 .stream()
                 .sorted((s1, s2) -> {
-                    if (s1.contains("e") && s2.contains("e")) {
+                    if (s1.contains("e") == s2.contains("e")) {
                         return 0;
                     }
                     else if (s1.contains("e") && !s2.contains("e")) {
                         return -1;
                     }
-                    else{
+                    else {
                         return 1;
                     }
                 })
