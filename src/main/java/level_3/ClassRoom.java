@@ -7,9 +7,14 @@ import java.util.Locale;
 public class ClassRoom {
     List<Student> students;
 
-    public ClassRoom() {
-        students = seed();
+    public ClassRoom(boolean doSeed) {
+        students = new ArrayList<>();
+
+        if (doSeed)
+            students = seed();
     }
+
+    public void addStudent(Student student) {students.add(student);}
 
     public void showStudentsNameAge() {
         System.out.println("Info - Basic");
@@ -58,8 +63,8 @@ public class ClassRoom {
         filteredList.forEach(System.out::println);
         return filteredList;
     }
+
     private List<Student> seed() {
-        students = new ArrayList<>();
         students.add(new Student("Angel", 22, "JAVA", 7.8f));
         students.add(new Student("Maria", 20, "PHP", 8.5f));
         students.add(new Student("Carlos", 21, "JAVA", 6.7f));

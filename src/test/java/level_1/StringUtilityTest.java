@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.Parameter;
 import org.junit.jupiter.params.ParameterizedClass;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -44,6 +45,20 @@ class StringUtilityTest {
         List<String> expected = List.of("Alberto", "Bernardo", "Marcos", "Carlos");
         List<String> actual = StringUtility.getWith6MinAndO(values);
         assertThat(actual).containsExactlyInAnyOrderElementsOf(expected);
+    }
+
+    @Test
+    void sortByLengthMinMax() {
+        List<String> expected = List.of("Rio", "Lisa", "Silva", "Marcos", "Carlos", "Alberto", "Bernardo", "Zubizarreta");
+        List<String> actual = StringUtility.sortByLengthMinMax(values);
+        assertThat(actual).containsExactlyElementsOf(expected);
+    }
+
+    @Test
+    void sortByLengthMaxMin() {
+        List<String> expected = List.of("Zubizarreta", "Bernardo", "Alberto", "Marcos", "Carlos", "Silva", "Lisa", "Rio");
+        List<String> actual = StringUtility.sortByLengthMaxMin(values);
+        assertThat(actual).containsExactlyElementsOf(expected);
     }
 
 }

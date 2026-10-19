@@ -1,7 +1,7 @@
 package level_3;
 
 public class Main {
-    ClassRoom classRoom = new ClassRoom();
+    ClassRoom classRoom = new ClassRoom(true);
     void main() {
         classRoom.showStudentsNameAge();
         classRoom.filterWithNameStartWith("a");

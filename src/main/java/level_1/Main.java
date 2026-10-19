@@ -33,18 +33,10 @@ public class Main {
         System.out.println("The PI number is: " + mathPi.getPiValue());
 
         System.out.println("Ex 6:");
-        names
-            .stream()
-            .sorted((String s1, String s2) -> Integer.compare(s1.length(), s2.length()))
-            .toList()
-            .forEach(System.out::println);
+        StringUtility.sortByLengthMinMax(names).forEach(System.out::println);
 
         System.out.println("Ex 7:");
-        names
-            .stream()
-            .sorted((String s1, String s2) -> Integer.compare(s2.length(), s1.length()))
-            .toList()
-            .forEach(System.out::println);
+        StringUtility.sortByLengthMaxMin(names).forEach(System.out::println);
 
         System.out.println("Ex 8:");
         StringReverse stringReverse = (String s) -> new StringBuilder(s).reverse().toString();
